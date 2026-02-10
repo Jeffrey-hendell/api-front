@@ -1,38 +1,122 @@
+body{
+  margin: 0;
+  padding: 0;
+}
 .App {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 15px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
   text-align: center;
+  margin-bottom: 25px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.user-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.user-form input {
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.user-form .buttons {
+  grid-column: span 2;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 10px;
+}
+
+.user-form button {
+  height: 42px;
+  padding: 0 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: gray;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.user-form button.cancel {
+  background: #888;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px; 
+}
+
+.user-table th,
+.user-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.user-table th {
+  background: #f5f5f5;
+}
+
+.user-table td button {
+  margin: 0 4px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+}
+
+
+.search {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.search input {
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.search button {
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #444;
+  color: white;
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+}
+
+
+
+@media (max-width: 768px) {
+  .user-form {
+    grid-template-columns: 1fr;
   }
-  to {
-    transform: rotate(360deg);
+
+  .user-form .buttons {
+    grid-column: span 1;
   }
 }
